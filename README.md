@@ -27,12 +27,12 @@ monitored-services/
 │  Frontend  │  ─────────────────▶    │   Backend    │
 │  Nuxt 4    │                        │  AdonisJS 6  │
 └────────────┘                        └──────┬───────┘
-                                                   │
-                                                   │ ORM
-                                                   ▼
-                                           ┌────────────┐
-                                           │  SQLite DB │
-                                           └────────────┘
+                                             │
+                                             │ ORM
+                                             ▼
+                                       ┌────────────┐
+                                       │  SQLite DB │
+                                       └────────────┘
 ```
 
 ### Key Design Principles
