@@ -24,7 +24,7 @@ monitored-services/
 
 ```
 ┌────────────┐      HTTP / JSON       ┌──────────────┐
-│  Frontend  │  ─────────────────▶   │   Backend    │
+│  Frontend  │  ─────────────────▶    │   Backend    │
 │  Nuxt 4    │                        │  AdonisJS 6  │
 └────────────┘                        └──────┬───────┘
                                                    │
