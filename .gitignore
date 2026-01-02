@@ -1,0 +1,34 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Nuxt
+.frontend/.nuxt
+frontend/.output
+frontend/.nitro
+frontend/.cache
+
+# AdonisJS
+backend/tmp
+backend/build
+backend/.adonisrc.json
+backend/ace-manifest.json
+
+# Docker
+*.log
+.docker/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
