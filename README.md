@@ -155,6 +155,8 @@ This ensures:
 Run the full system using Docker:
 
 ```bash
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
 docker-compose up --build
 ```
 
