@@ -2,6 +2,9 @@
 import ServiceCard from '~/components/ServiceCard.vue'
 import SystemStatusBanner from '~/components/SystemStatusBanner.vue'
 import { useServices } from '~/composables/useServices'
+import { useAuth } from '~/composables/useAuth'
+
+const { isLoggedIn } = useAuth()
 
 const {
   services,
@@ -27,7 +30,7 @@ const {
           <p class="text-slate-600 mt-2">Real-time status of all systems and services</p>
         </div>
         <div class="flex gap-2">
-          <button @click="isServiceDialogOpen = true" class="px-4 py-2 bg-slate-900 text-white rounded-lg font-medium hover:bg-slate-800 transition-colors">
+          <button v-if="isLoggedIn" @click="isServiceDialogOpen = true" class="px-4 py-2 bg-slate-900 text-white rounded-lg font-medium hover:bg-slate-800 transition-colors">
             Add Service
           </button>
           <NuxtLink to="/login" class="px-4 py-2 border border-slate-300 text-slate-900 rounded-lg font-medium hover:bg-slate-50 transition-colors">Admin Access</NuxtLink>
@@ -56,7 +59,7 @@ const {
       </div>
     </main>
 
-    <div v-if="isServiceDialogOpen" class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+    <div v-if="isServiceDialogOpen && isLoggedIn" class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
       <div class="bg-white rounded-lg p-6 max-w-md w-full">
         <h2 class="text-xl font-bold text-slate-900 mb-2">Add New Service</h2>
         <form @submit.prevent="createService" class="space-y-4">
