@@ -2,6 +2,16 @@ export default defineNuxtConfig({
   devtools: {
     enabled: false
   },
+  devServer: {
+    host: process.env.NUXT_HOST || '0.0.0.0',
+    port: Number(process.env.NUXT_PORT) || 3000,
+  },
+
+  vite: {
+    server: {
+      allowedHosts: true,
+    }
+  },
   future: {
     compatibilityVersion: 4,
   },
@@ -11,7 +21,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
   runtimeConfig: {
     public: {
-      apiBase: 'http://localhost:3333/api'
+      apiBase: process.env.NUXT_PUBLIC_API_BASE,
     }
   }
 })

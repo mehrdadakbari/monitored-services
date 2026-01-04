@@ -26,11 +26,16 @@ export const http = defineConfig({
   useAsyncLocalStorage: false,
 
   /**
+   * Trust nginx / reverse proxy
+   */
+  trustProxy: env.get('TRUST_PROXY', 'true') === 'true',
+
+  /**
    * Manage cookies configuration. The settings for the session id cookie are
    * defined inside the "config/session.ts" file.
    */
   cookie: {
-    domain: '',
+    domain: env.get('COOKIE_DOMAIN', ''),
     path: '/',
     maxAge: '2h',
     httpOnly: true,
