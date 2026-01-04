@@ -157,8 +157,22 @@ Run the full system using Docker:
 ```bash
 cp backend/.env.example backend/.env
 cp frontend/.env.example frontend/.env
-docker-compose up --build
+sudo nano /etc/hosts
 ```
+Add these lines to /etc/hosts:
+```bash
+127.0.0.1 monitored-service.local
+127.0.0.1 api.monitored-service.local
+```
+Then start Docker:
+```bash
+docker-compose up --build -d
+```
+
+- Frontend: http://monitored-service.local
+
+- Backend API: http://api.monitored-service.local
+
 
 This will start:
 - Backend API
